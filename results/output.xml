@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.6 on win32)" generated="2024-10-05T23:07:16.625073" rpa="false" schemaversion="5">
+<suite id="s1" name="Formulario" source="C:\Users\carva\Desktop\desafio_tecnico_monuv\tests\cac\formulario.robot">
+<test id="s1-t1" name="Cenário 1: Enviar o formulário com todos os campos preenchidos corretamente" line="8">
+<kw name="Dado que acesso o site cat" owner="home_steps" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:17.507246" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-05T23:07:17.507246" elapsed="4.196262"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-05T23:07:21.703508" elapsed="0.047955"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:17.507246" elapsed="4.244217"/>
+</kw>
+<kw name="Quando preencho todos os campos" owner="home_steps">
+<kw name="Gera Nome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:21.862026" level="INFO">${nome} = Melanie</msg>
+<var>${nome}</var>
+<status status="PASS" start="2024-10-05T23:07:21.751463" elapsed="0.110563"/>
+</kw>
+<kw name="Gera Sobrenome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:21.862026" level="INFO">${sobrenome} = Vazquez</msg>
+<var>${sobrenome}</var>
+<status status="PASS" start="2024-10-05T23:07:21.862026" elapsed="0.000000"/>
+</kw>
+<kw name="Gera Telefone Formato Especifico" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:21.862026" level="INFO">${telefone} = (11) 32836197</msg>
+<var>${telefone}</var>
+<status status="PASS" start="2024-10-05T23:07:21.862026" elapsed="0.000000"/>
+</kw>
+<kw name="Gera Email" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:21.862026" level="INFO">${email} = ilee@example.net</msg>
+<var>${email}</var>
+<status status="PASS" start="2024-10-05T23:07:21.862026" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:21.862026" level="INFO">Typing text 'Melanie' into text field 'id:firstName'.</msg>
+<arg>${home.input_nome}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:21.862026" elapsed="0.212335"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:22.076365" level="INFO">Typing text 'Vazquez' into text field 'id:lastName'.</msg>
+<arg>${home.input_sobrenome}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:22.075362" elapsed="0.128252"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:22.203614" level="INFO">Typing text 'ilee@example.net' into text field 'id:email'.</msg>
+<arg>${home.input_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:22.203614" elapsed="0.161802"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:22.366418" level="INFO">Typing text '(11) 32836197' into text field 'id:phone'.</msg>
+<arg>${home.input_telefone}</arg>
+<arg>${telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:22.366418" elapsed="0.125518"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:22.492937" level="INFO">Selecting options from selection list 'id:product' by index 2.</msg>
+<arg>${home.select_produto}</arg>
+<arg>2</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-10-05T23:07:22.492937" elapsed="0.116038"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:22.609975" level="INFO">Clicking element '//input[@value="elogio"]'.</msg>
+<arg>${home.input_rdelogio}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:22.609975" elapsed="0.066655"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:22.676630" level="INFO">Selecting checkbox 'id:email-checkbox'.</msg>
+<arg>${home.input_ckemail}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:22.676630" elapsed="0.080493"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:22.757123" level="INFO">Selecting checkbox 'id:phone-checkbox'.</msg>
+<arg>${home.input_cktelefone}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:22.757123" elapsed="0.079328"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:22.836451" level="INFO">Typing text 'Site muito bem elaborado' into text field 'id:open-text-area'.</msg>
+<arg>${home.textarea_sugestao}</arg>
+<arg>Site muito bem elaborado</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:22.836451" elapsed="0.214485"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:21.751463" elapsed="1.299473"/>
+</kw>
+<kw name="E adiciono um anexo" owner="home_steps">
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:23.052231" level="INFO">Sending C:\Users\carva\Desktop\desafio_tecnico_monuv\elements\home\arquivos\01_print_site.png to browser.</msg>
+<arg>${home.input_anexo}</arg>
+<arg>${home.caminho_arquivo}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:23.051934" elapsed="0.046655"/>
+</kw>
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:23.112398" level="INFO">Element 'Nenhum ficheiro selecionado' did not exist.</msg>
+<arg>Nenhum ficheiro selecionado</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2024-10-05T23:07:23.098589" elapsed="0.013809"/>
+</kw>
+<doc>Esta palavra-chave será usada para testar o upload do arquivo</doc>
+<status status="PASS" start="2024-10-05T23:07:23.050936" elapsed="0.061462"/>
+</kw>
+<kw name="E clico no botão enviar" owner="home_steps">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:23.113433" level="INFO">Clicking element '//button[@type='submit' and @class='button']'.</msg>
+<arg>${home.button_eviar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:23.113433" elapsed="0.070255"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:23.112398" elapsed="0.072319"/>
+</kw>
+<kw name="Então o formulário é enviado com sucesso" owner="home_steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${home.msg_sucesso}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-05T23:07:23.185725" elapsed="0.026988"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:23.185261" elapsed="0.027452"/>
+</kw>
+<kw name="Fechar navegador" owner="home_steps" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-05T23:07:23.213713" elapsed="2.194758"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:23.213713" elapsed="2.194758"/>
+</kw>
+<doc>Este cenário verifica se todos os campos estão funcionando quando preenchidos. Seria o caminho feliz</doc>
+<tag>regressivo</tag>
+<status status="PASS" start="2024-10-05T23:07:17.507246" elapsed="7.902226"/>
+</test>
+<test id="s1-t2" name="Cenário 2: Validar o campo obrigatorio nome" line="16">
+<kw name="Dado que acesso o site cat" owner="home_steps" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:25.418489" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-05T23:07:25.417535" elapsed="2.706671"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-05T23:07:28.124206" elapsed="0.042869"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:25.416477" elapsed="2.750598"/>
+</kw>
+<kw name="Quando preencho todos os campos obrigatórios" owner="home_steps">
+<kw name="Gera Nome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:28.334702" level="INFO">${nome} = Cody</msg>
+<var>${nome}</var>
+<status status="PASS" start="2024-10-05T23:07:28.167075" elapsed="0.167627"/>
+</kw>
+<kw name="Gera Sobrenome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:28.334702" level="INFO">${sobrenome} = Hunt</msg>
+<var>${sobrenome}</var>
+<status status="PASS" start="2024-10-05T23:07:28.334702" elapsed="0.000000"/>
+</kw>
+<kw name="Gera Email Gmail" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:28.334702" level="INFO">${email} = Peggy@gmail.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2024-10-05T23:07:28.334702" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:28.334702" level="INFO">Typing text 'Cody' into text field 'id:firstName'.</msg>
+<arg>${home.input_nome}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:28.334702" elapsed="0.203123"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:28.537825" level="INFO">Typing text 'Hunt' into text field 'id:lastName'.</msg>
+<arg>${home.input_sobrenome}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:28.537825" elapsed="0.114325"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:28.652150" level="INFO">Typing text 'Peggy@gmail.com' into text field 'id:email'.</msg>
+<arg>${home.input_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:28.652150" elapsed="0.124571"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:28.777716" level="INFO">Selecting options from selection list 'id:product' by index 1.</msg>
+<arg>${home.select_produto}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-10-05T23:07:28.776721" elapsed="0.087605"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:28.864326" level="INFO">Clicking element '//input[@value="feedback"]'.</msg>
+<arg>${home.input_rdfeedback}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:28.864326" elapsed="0.048572"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:28.912898" level="INFO">Typing text 'Gostei da experiência' into text field 'id:open-text-area'.</msg>
+<arg>${home.textarea_sugestao}</arg>
+<arg>Gostei da experiência</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:28.912898" elapsed="0.146903"/>
+</kw>
+<doc>Esta palavra-chave será usada inicialmente no restante dos teste, não sendo necessário preencher todos os campos</doc>
+<status status="PASS" start="2024-10-05T23:07:28.167075" elapsed="0.892726"/>
+</kw>
+<kw name="E limpo o campo" owner="home_steps">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${home.${campo}}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:29.060804" elapsed="0.033617"/>
+</kw>
+<arg>input_nome</arg>
+<status status="PASS" start="2024-10-05T23:07:29.060804" elapsed="0.033617"/>
+</kw>
+<kw name="E clico no botão enviar" owner="home_steps">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:29.096453" level="INFO">Clicking element '//button[@type='submit' and @class='button']'.</msg>
+<arg>${home.button_eviar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:29.095423" elapsed="0.057980"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:29.094421" elapsed="0.058982"/>
+</kw>
+<kw name="Então valido que a mensagem de campos obrigatórios é exibida corretamente" owner="home_steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${home.msg_erro}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-05T23:07:29.153403" elapsed="0.031118"/>
+</kw>
+<doc>Esta palavra-chave será usada para testar a validação dos campos obrigatório (nome, sobrenome, email e sugestão)</doc>
+<status status="PASS" start="2024-10-05T23:07:29.153403" elapsed="0.031118"/>
+</kw>
+<kw name="Fechar navegador" owner="home_steps" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-05T23:07:29.185529" elapsed="2.167518"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:29.184521" elapsed="2.168526"/>
+</kw>
+<doc>Este cenário verifica se ao não preencher o nome,que é um campo obrigatório, ele envia algum alerta e não deixa enviar o formulário</doc>
+<tag>obrigatorios</tag>
+<tag>regressivo</tag>
+<status status="PASS" start="2024-10-05T23:07:25.413472" elapsed="5.940725"/>
+</test>
+<test id="s1-t3" name="Cenário 3: Validar o campo obrigatorio sobrenome" line="24">
+<kw name="Dado que acesso o site cat" owner="home_steps" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:31.357532" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-05T23:07:31.357532" elapsed="2.401155"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-05T23:07:33.758687" elapsed="0.056636"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:31.356455" elapsed="2.458868"/>
+</kw>
+<kw name="Quando preencho todos os campos obrigatórios" owner="home_steps">
+<kw name="Gera Nome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:33.939031" level="INFO">${nome} = Alexandra</msg>
+<var>${nome}</var>
+<status status="PASS" start="2024-10-05T23:07:33.816336" elapsed="0.122695"/>
+</kw>
+<kw name="Gera Sobrenome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:33.944028" level="INFO">${sobrenome} = Simpson</msg>
+<var>${sobrenome}</var>
+<status status="PASS" start="2024-10-05T23:07:33.940030" elapsed="0.003998"/>
+</kw>
+<kw name="Gera Email Gmail" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:33.945041" level="INFO">${email} = Heather@gmail.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2024-10-05T23:07:33.944028" elapsed="0.001013"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:33.946025" level="INFO">Typing text 'Alexandra' into text field 'id:firstName'.</msg>
+<arg>${home.input_nome}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:33.945041" elapsed="0.176117"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:34.121158" level="INFO">Typing text 'Simpson' into text field 'id:lastName'.</msg>
+<arg>${home.input_sobrenome}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:34.121158" elapsed="0.129688"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:34.250846" level="INFO">Typing text 'Heather@gmail.com' into text field 'id:email'.</msg>
+<arg>${home.input_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:34.250846" elapsed="0.128352"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:34.379198" level="INFO">Selecting options from selection list 'id:product' by index 1.</msg>
+<arg>${home.select_produto}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-10-05T23:07:34.379198" elapsed="0.081575"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:34.460773" level="INFO">Clicking element '//input[@value="feedback"]'.</msg>
+<arg>${home.input_rdfeedback}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:34.460773" elapsed="0.052150"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:34.512923" level="INFO">Typing text 'Gostei da experiência' into text field 'id:open-text-area'.</msg>
+<arg>${home.textarea_sugestao}</arg>
+<arg>Gostei da experiência</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:34.512923" elapsed="0.141942"/>
+</kw>
+<doc>Esta palavra-chave será usada inicialmente no restante dos teste, não sendo necessário preencher todos os campos</doc>
+<status status="PASS" start="2024-10-05T23:07:33.815323" elapsed="0.840542"/>
+</kw>
+<kw name="E limpo o campo" owner="home_steps">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${home.${campo}}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:34.655865" elapsed="0.033340"/>
+</kw>
+<arg>input_sobrenome</arg>
+<status status="PASS" start="2024-10-05T23:07:34.655865" elapsed="0.033340"/>
+</kw>
+<kw name="E clico no botão enviar" owner="home_steps">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:34.689205" level="INFO">Clicking element '//button[@type='submit' and @class='button']'.</msg>
+<arg>${home.button_eviar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:34.689205" elapsed="0.062185"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:34.689205" elapsed="0.062185"/>
+</kw>
+<kw name="Então valido que a mensagem de campos obrigatórios é exibida corretamente" owner="home_steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${home.msg_erro}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-05T23:07:34.752041" elapsed="0.030149"/>
+</kw>
+<doc>Esta palavra-chave será usada para testar a validação dos campos obrigatório (nome, sobrenome, email e sugestão)</doc>
+<status status="PASS" start="2024-10-05T23:07:34.752041" elapsed="0.030149"/>
+</kw>
+<kw name="Fechar navegador" owner="home_steps" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-05T23:07:34.783193" elapsed="2.167829"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:34.782190" elapsed="2.169573"/>
+</kw>
+<doc>Este cenário verifica se ao não preencher o sobrenome, que é um campo obrigatório, ele envia algum alerta e não deixa enviar o formulário</doc>
+<tag>obrigatorios</tag>
+<tag>regressivo</tag>
+<status status="PASS" start="2024-10-05T23:07:31.355897" elapsed="5.596344"/>
+</test>
+<test id="s1-t4" name="Cenário 4: Validar o campo obrigatorio email" line="32">
+<kw name="Dado que acesso o site cat" owner="home_steps" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:36.952607" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-05T23:07:36.952607" elapsed="2.718157"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-05T23:07:39.670764" elapsed="0.034975"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:36.952607" elapsed="2.753132"/>
+</kw>
+<kw name="Quando preencho todos os campos obrigatórios" owner="home_steps">
+<kw name="Gera Nome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:39.844558" level="INFO">${nome} = Rita</msg>
+<var>${nome}</var>
+<status status="PASS" start="2024-10-05T23:07:39.705739" elapsed="0.138819"/>
+</kw>
+<kw name="Gera Sobrenome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:39.845558" level="INFO">${sobrenome} = Garcia</msg>
+<var>${sobrenome}</var>
+<status status="PASS" start="2024-10-05T23:07:39.845558" elapsed="0.000000"/>
+</kw>
+<kw name="Gera Email Gmail" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:39.846558" level="INFO">${email} = Joseph@gmail.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2024-10-05T23:07:39.845558" elapsed="0.001000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:39.847558" level="INFO">Typing text 'Rita' into text field 'id:firstName'.</msg>
+<arg>${home.input_nome}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:39.846558" elapsed="0.143512"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:40.005713" level="INFO">Typing text 'Garcia' into text field 'id:lastName'.</msg>
+<arg>${home.input_sobrenome}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:40.005713" elapsed="0.126702"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:40.133247" level="INFO">Typing text 'Joseph@gmail.com' into text field 'id:email'.</msg>
+<arg>${home.input_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:40.132415" elapsed="0.120001"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:40.252416" level="INFO">Selecting options from selection list 'id:product' by index 1.</msg>
+<arg>${home.select_produto}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-10-05T23:07:40.252416" elapsed="0.079453"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:40.331869" level="INFO">Clicking element '//input[@value="feedback"]'.</msg>
+<arg>${home.input_rdfeedback}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:40.331869" elapsed="0.052731"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:40.384600" level="INFO">Typing text 'Gostei da experiência' into text field 'id:open-text-area'.</msg>
+<arg>${home.textarea_sugestao}</arg>
+<arg>Gostei da experiência</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:40.384600" elapsed="0.147009"/>
+</kw>
+<doc>Esta palavra-chave será usada inicialmente no restante dos teste, não sendo necessário preencher todos os campos</doc>
+<status status="PASS" start="2024-10-05T23:07:39.705739" elapsed="0.825870"/>
+</kw>
+<kw name="E limpo o campo" owner="home_steps">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${home.${campo}}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:40.532614" elapsed="0.035890"/>
+</kw>
+<arg>input_email</arg>
+<status status="PASS" start="2024-10-05T23:07:40.531609" elapsed="0.036895"/>
+</kw>
+<kw name="E clico no botão enviar" owner="home_steps">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:40.568504" level="INFO">Clicking element '//button[@type='submit' and @class='button']'.</msg>
+<arg>${home.button_eviar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:40.568504" elapsed="0.065300"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:40.568504" elapsed="0.065300"/>
+</kw>
+<kw name="Então valido que a mensagem de campos obrigatórios é exibida corretamente" owner="home_steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${home.msg_erro}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-05T23:07:40.633804" elapsed="0.029261"/>
+</kw>
+<doc>Esta palavra-chave será usada para testar a validação dos campos obrigatório (nome, sobrenome, email e sugestão)</doc>
+<status status="PASS" start="2024-10-05T23:07:40.633804" elapsed="0.030261"/>
+</kw>
+<kw name="Fechar navegador" owner="home_steps" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-05T23:07:40.664065" elapsed="2.150896"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:40.664065" elapsed="2.152353"/>
+</kw>
+<doc>Este cenário verifica se ao não preencher o email, que é um campo obrigatório, ele envia algum alerta e não deixa enviar o formulário</doc>
+<tag>obrigatorios</tag>
+<tag>regressivo</tag>
+<status status="PASS" start="2024-10-05T23:07:36.952607" elapsed="5.864616"/>
+</test>
+<test id="s1-t5" name="Cenário 5: Validar o campo obrigatorio telefone" line="40">
+<kw name="Dado que acesso o site cat" owner="home_steps" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:42.818301" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-05T23:07:42.818301" elapsed="2.404203"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-05T23:07:45.222504" elapsed="0.043526"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:42.818301" elapsed="2.447729"/>
+</kw>
+<kw name="Quando preencho todos os campos obrigatórios" owner="home_steps">
+<kw name="Gera Nome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:45.428225" level="INFO">${nome} = Amy</msg>
+<var>${nome}</var>
+<status status="PASS" start="2024-10-05T23:07:45.266030" elapsed="0.162195"/>
+</kw>
+<kw name="Gera Sobrenome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:45.428225" level="INFO">${sobrenome} = Sutton</msg>
+<var>${sobrenome}</var>
+<status status="PASS" start="2024-10-05T23:07:45.428225" elapsed="0.000000"/>
+</kw>
+<kw name="Gera Email Gmail" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:45.428225" level="INFO">${email} = Adam@gmail.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2024-10-05T23:07:45.428225" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:45.428225" level="INFO">Typing text 'Amy' into text field 'id:firstName'.</msg>
+<arg>${home.input_nome}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:45.428225" elapsed="0.176722"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:45.604947" level="INFO">Typing text 'Sutton' into text field 'id:lastName'.</msg>
+<arg>${home.input_sobrenome}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:45.604947" elapsed="0.109814"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:45.714761" level="INFO">Typing text 'Adam@gmail.com' into text field 'id:email'.</msg>
+<arg>${home.input_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:45.714761" elapsed="0.128297"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:45.844069" level="INFO">Selecting options from selection list 'id:product' by index 1.</msg>
+<arg>${home.select_produto}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-10-05T23:07:45.844069" elapsed="0.092979"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:45.937048" level="INFO">Clicking element '//input[@value="feedback"]'.</msg>
+<arg>${home.input_rdfeedback}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:45.937048" elapsed="0.054939"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:45.991987" level="INFO">Typing text 'Gostei da experiência' into text field 'id:open-text-area'.</msg>
+<arg>${home.textarea_sugestao}</arg>
+<arg>Gostei da experiência</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:45.991987" elapsed="0.173570"/>
+</kw>
+<doc>Esta palavra-chave será usada inicialmente no restante dos teste, não sendo necessário preencher todos os campos</doc>
+<status status="PASS" start="2024-10-05T23:07:45.266030" elapsed="0.899527"/>
+</kw>
+<kw name="E seleciono o meio de contato preferencial telefone" owner="home_steps">
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:46.166558" level="INFO">Selecting checkbox 'id:phone-checkbox'.</msg>
+<arg>${home.input_cktelefone}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:46.166558" elapsed="0.069662"/>
+</kw>
+<doc>Esta palavra-chave será usada para habilitar também a mensagem de obrigatório no telefone</doc>
+<status status="PASS" start="2024-10-05T23:07:46.165557" elapsed="0.071668"/>
+</kw>
+<kw name="E clico no botão enviar" owner="home_steps">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:46.239227" level="INFO">Clicking element '//button[@type='submit' and @class='button']'.</msg>
+<arg>${home.button_eviar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:46.238226" elapsed="0.043265"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:46.237225" elapsed="0.044266"/>
+</kw>
+<kw name="Então valido que a mensagem de campos obrigatórios é exibida corretamente" owner="home_steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${home.msg_erro}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-05T23:07:46.281491" elapsed="0.036176"/>
+</kw>
+<doc>Esta palavra-chave será usada para testar a validação dos campos obrigatório (nome, sobrenome, email e sugestão)</doc>
+<status status="PASS" start="2024-10-05T23:07:46.281491" elapsed="0.036176"/>
+</kw>
+<kw name="Fechar navegador" owner="home_steps" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-05T23:07:46.318649" elapsed="2.146820"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:46.317667" elapsed="2.147802"/>
+</kw>
+<doc>Este cenário verifica se ao selecionar o check de meio de contato telefone, ele torna o campo telefone obrigatório</doc>
+<tag>regressivo</tag>
+<tag>telefone</tag>
+<status status="PASS" start="2024-10-05T23:07:42.818301" elapsed="5.647168"/>
+</test>
+<test id="s1-t6" name="Cenário 6: Validar o campo obrigatorio sugestão" line="48">
+<kw name="Dado que acesso o site cat" owner="home_steps" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:48.465469" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-05T23:07:48.465469" elapsed="2.553362"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.018831" elapsed="0.042228"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:48.465469" elapsed="2.595590"/>
+</kw>
+<kw name="Quando preencho todos os campos obrigatórios" owner="home_steps">
+<kw name="Gera Nome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:51.195786" level="INFO">${nome} = Timothy</msg>
+<var>${nome}</var>
+<status status="PASS" start="2024-10-05T23:07:51.061059" elapsed="0.134727"/>
+</kw>
+<kw name="Gera Sobrenome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:51.195786" level="INFO">${sobrenome} = Sanchez</msg>
+<var>${sobrenome}</var>
+<status status="PASS" start="2024-10-05T23:07:51.195786" elapsed="0.000000"/>
+</kw>
+<kw name="Gera Email Gmail" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:51.195786" level="INFO">${email} = Dr.@gmail.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2024-10-05T23:07:51.195786" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:51.195786" level="INFO">Typing text 'Timothy' into text field 'id:firstName'.</msg>
+<arg>${home.input_nome}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.195786" elapsed="0.156245"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:51.352031" level="INFO">Typing text 'Sanchez' into text field 'id:lastName'.</msg>
+<arg>${home.input_sobrenome}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.352031" elapsed="0.128178"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:51.480209" level="INFO">Typing text 'Dr.@gmail.com' into text field 'id:email'.</msg>
+<arg>${home.input_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.480209" elapsed="0.117069"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:51.598280" level="INFO">Selecting options from selection list 'id:product' by index 1.</msg>
+<arg>${home.select_produto}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.598280" elapsed="0.081225"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:51.679505" level="INFO">Clicking element '//input[@value="feedback"]'.</msg>
+<arg>${home.input_rdfeedback}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.679505" elapsed="0.044026"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:51.724530" level="INFO">Typing text 'Gostei da experiência' into text field 'id:open-text-area'.</msg>
+<arg>${home.textarea_sugestao}</arg>
+<arg>Gostei da experiência</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.724530" elapsed="0.139637"/>
+</kw>
+<doc>Esta palavra-chave será usada inicialmente no restante dos teste, não sendo necessário preencher todos os campos</doc>
+<status status="PASS" start="2024-10-05T23:07:51.061059" elapsed="0.803108"/>
+</kw>
+<kw name="E limpo o campo" owner="home_steps">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${home.${campo}}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.865164" elapsed="0.028991"/>
+</kw>
+<arg>textarea_sugestao</arg>
+<status status="PASS" start="2024-10-05T23:07:51.865164" elapsed="0.029555"/>
+</kw>
+<kw name="E clico no botão enviar" owner="home_steps">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:51.896803" level="INFO">Clicking element '//button[@type='submit' and @class='button']'.</msg>
+<arg>${home.button_eviar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.895805" elapsed="0.051538"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:51.894794" elapsed="0.052549"/>
+</kw>
+<kw name="Então valido que a mensagem de campos obrigatórios é exibida corretamente" owner="home_steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${home.msg_erro}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.947343" elapsed="0.026042"/>
+</kw>
+<doc>Esta palavra-chave será usada para testar a validação dos campos obrigatório (nome, sobrenome, email e sugestão)</doc>
+<status status="PASS" start="2024-10-05T23:07:51.947343" elapsed="0.026042"/>
+</kw>
+<kw name="Fechar navegador" owner="home_steps" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-05T23:07:51.974383" elapsed="2.203500"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:51.974383" elapsed="2.203500"/>
+</kw>
+<doc>Este cenário verifica se ao não preencher o sugestão, que é um campo obrigatório, ele envia algum alerta e não deixa enviar o formulário</doc>
+<tag>obrigatorios</tag>
+<tag>regressivo</tag>
+<status status="PASS" start="2024-10-05T23:07:48.465469" elapsed="5.712414"/>
+</test>
+<test id="s1-t7" name="Cenário 7: Validar alerta de campo obrigatório no telefone" line="56">
+<kw name="Dado que acesso o site cat" owner="home_steps" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:54.177883" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-05T23:07:54.177883" elapsed="2.405164"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-05T23:07:56.583541" elapsed="0.037499"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:54.177883" elapsed="2.443631"/>
+</kw>
+<kw name="Quando preencho todos os campos obrigatórios" owner="home_steps">
+<kw name="Gera Nome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:56.753434" level="INFO">${nome} = Jessica</msg>
+<var>${nome}</var>
+<status status="PASS" start="2024-10-05T23:07:56.622089" elapsed="0.131345"/>
+</kw>
+<kw name="Gera Sobrenome" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:56.753434" level="INFO">${sobrenome} = Higgins</msg>
+<var>${sobrenome}</var>
+<status status="PASS" start="2024-10-05T23:07:56.753434" elapsed="0.000000"/>
+</kw>
+<kw name="Gera Email Gmail" owner="FakerLibrary">
+<msg time="2024-10-05T23:07:56.754432" level="INFO">${email} = Kristen@gmail.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2024-10-05T23:07:56.754432" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:56.755432" level="INFO">Typing text 'Jessica' into text field 'id:firstName'.</msg>
+<arg>${home.input_nome}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:56.754432" elapsed="0.148093"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:56.902525" level="INFO">Typing text 'Higgins' into text field 'id:lastName'.</msg>
+<arg>${home.input_sobrenome}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:56.902525" elapsed="0.126307"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:57.028832" level="INFO">Typing text 'Kristen@gmail.com' into text field 'id:email'.</msg>
+<arg>${home.input_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:57.028832" elapsed="0.125276"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:57.155105" level="INFO">Selecting options from selection list 'id:product' by index 1.</msg>
+<arg>${home.select_produto}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-10-05T23:07:57.154108" elapsed="0.083661"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:57.237769" level="INFO">Clicking element '//input[@value="feedback"]'.</msg>
+<arg>${home.input_rdfeedback}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:57.237769" elapsed="0.046534"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:57.284303" level="INFO">Typing text 'Gostei da experiência' into text field 'id:open-text-area'.</msg>
+<arg>${home.textarea_sugestao}</arg>
+<arg>Gostei da experiência</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:57.284303" elapsed="0.127536"/>
+</kw>
+<doc>Esta palavra-chave será usada inicialmente no restante dos teste, não sendo necessário preencher todos os campos</doc>
+<status status="PASS" start="2024-10-05T23:07:56.622089" elapsed="0.789750"/>
+</kw>
+<kw name="E seleciono o meio de contato preferencial telefone" owner="home_steps">
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:57.413839" level="INFO">Selecting checkbox 'id:phone-checkbox'.</msg>
+<arg>${home.input_cktelefone}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:07:57.412841" elapsed="0.058626"/>
+</kw>
+<doc>Esta palavra-chave será usada para habilitar também a mensagem de obrigatório no telefone</doc>
+<status status="PASS" start="2024-10-05T23:07:57.412841" elapsed="0.058626"/>
+</kw>
+<kw name="Então verifico que a mensagem no campo &quot;obrigatório&quot; foi exibida" owner="home_steps">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:57.496198" level="INFO">Element '//span[@class="phone-label-span required-mark"]' is displayed.</msg>
+<arg>${home.alerta_obrigatorio}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-05T23:07:57.471467" elapsed="0.024731"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:57.471467" elapsed="0.024731"/>
+</kw>
+<kw name="Fechar navegador" owner="home_steps" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-05T23:07:57.497202" elapsed="2.148081"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:57.497202" elapsed="2.148081"/>
+</kw>
+<doc>Este cenário verifica se ao selecionar o check de meio de contato telefone, ele exibe a mensagem de "obrigatório" no campo de telefone</doc>
+<tag>regressivo</tag>
+<tag>telefone</tag>
+<status status="PASS" start="2024-10-05T23:07:54.177883" elapsed="5.467400"/>
+</test>
+<test id="s1-t8" name="Cenário 8: Validar formato do campo de e-mail" line="63">
+<kw name="Dado que acesso o site cat" owner="home_steps" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:07:59.645283" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-05T23:07:59.645283" elapsed="2.530769"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-05T23:08:02.176052" elapsed="0.033912"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:07:59.645283" elapsed="2.564681"/>
+</kw>
+<kw name="Quando preencho todos os campos obrigatórios" owner="home_steps">
+<kw name="Gera Nome" owner="FakerLibrary">
+<msg time="2024-10-05T23:08:02.340385" level="INFO">${nome} = Teresa</msg>
+<var>${nome}</var>
+<status status="PASS" start="2024-10-05T23:08:02.209964" elapsed="0.130421"/>
+</kw>
+<kw name="Gera Sobrenome" owner="FakerLibrary">
+<msg time="2024-10-05T23:08:02.340385" level="INFO">${sobrenome} = Smith</msg>
+<var>${sobrenome}</var>
+<status status="PASS" start="2024-10-05T23:08:02.340385" elapsed="0.001004"/>
+</kw>
+<kw name="Gera Email Gmail" owner="FakerLibrary">
+<msg time="2024-10-05T23:08:02.341389" level="INFO">${email} = Samantha@gmail.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2024-10-05T23:08:02.341389" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:08:02.342383" level="INFO">Typing text 'Teresa' into text field 'id:firstName'.</msg>
+<arg>${home.input_nome}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:08:02.341389" elapsed="0.158815"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:08:02.500204" level="INFO">Typing text 'Smith' into text field 'id:lastName'.</msg>
+<arg>${home.input_sobrenome}</arg>
+<arg>${sobrenome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:08:02.500204" elapsed="0.110836"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:08:02.611040" level="INFO">Typing text 'Samantha@gmail.com' into text field 'id:email'.</msg>
+<arg>${home.input_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:08:02.611040" elapsed="0.159334"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:08:02.771377" level="INFO">Selecting options from selection list 'id:product' by index 1.</msg>
+<arg>${home.select_produto}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-10-05T23:08:02.771377" elapsed="0.100666"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:08:02.872043" level="INFO">Clicking element '//input[@value="feedback"]'.</msg>
+<arg>${home.input_rdfeedback}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:08:02.872043" elapsed="0.073542"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:08:02.945585" level="INFO">Typing text 'Gostei da experiência' into text field 'id:open-text-area'.</msg>
+<arg>${home.textarea_sugestao}</arg>
+<arg>Gostei da experiência</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:08:02.945585" elapsed="0.175536"/>
+</kw>
+<doc>Esta palavra-chave será usada inicialmente no restante dos teste, não sendo necessário preencher todos os campos</doc>
+<status status="PASS" start="2024-10-05T23:08:02.209964" elapsed="0.911157"/>
+</kw>
+<kw name="E limpo o campo" owner="home_steps">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${home.${campo}}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:08:03.122118" elapsed="0.047093"/>
+</kw>
+<arg>input_email</arg>
+<status status="PASS" start="2024-10-05T23:08:03.122118" elapsed="0.047093"/>
+</kw>
+<kw name="E preencho o campo email no formato incorreto" owner="home_steps">
+<kw name="Gera Somente Letras" owner="FakerLibrary">
+<msg time="2024-10-05T23:08:03.176910" level="INFO">${email} = cuCnsUonIb</msg>
+<var>${email}</var>
+<arg>10</arg>
+<status status="PASS" start="2024-10-05T23:08:03.175901" elapsed="0.001009"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:08:03.178912" level="INFO">Typing text 'cuCnsUonIb' into text field 'id:email'.</msg>
+<arg>${home.input_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:08:03.176910" elapsed="0.134058"/>
+</kw>
+<doc>Esta palavra-chave é usada para validar que o campo e-mail tenha "@"</doc>
+<status status="PASS" start="2024-10-05T23:08:03.175901" elapsed="0.135067"/>
+</kw>
+<kw name="E clico no botão enviar" owner="home_steps">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:08:03.310968" level="INFO">Clicking element '//button[@type='submit' and @class='button']'.</msg>
+<arg>${home.button_eviar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:08:03.310968" elapsed="0.083170"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:08:03.310968" elapsed="0.083170"/>
+</kw>
+<kw name="Então valido que a mensagem de campos obrigatórios é exibida corretamente" owner="home_steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${home.msg_erro}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-05T23:08:03.395155" elapsed="0.031605"/>
+</kw>
+<doc>Esta palavra-chave será usada para testar a validação dos campos obrigatório (nome, sobrenome, email e sugestão)</doc>
+<status status="PASS" start="2024-10-05T23:08:03.395155" elapsed="0.031605"/>
+</kw>
+<kw name="Fechar navegador" owner="home_steps" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-05T23:08:03.427757" elapsed="2.166646"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:08:03.427757" elapsed="2.167643"/>
+</kw>
+<doc>Este cenário verifica se o formato do e-mail está com @ e envia um aviso caso não esteja</doc>
+<tag>regressivo</tag>
+<status status="PASS" start="2024-10-05T23:07:59.645283" elapsed="5.950453"/>
+</test>
+<test id="s1-t9" name="Cenário 9: Acessar página de politica de privacidade" line="72">
+<kw name="Dado que acesso o site cat" owner="home_steps" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:08:05.596130" level="INFO">Opening browser 'chrome' to base url 'https://cac-tat.s3.eu-central-1.amazonaws.com/index.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-05T23:08:05.596130" elapsed="2.414368"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-05T23:08:08.010498" elapsed="0.050565"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:08:05.596130" elapsed="2.464933"/>
+</kw>
+<kw name="Quando clico em politica de privacidade" owner="home_steps">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-05T23:08:08.064061" level="INFO">Clicking element 'id:privacy'.</msg>
+<arg>${home.button_politicaprv}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-05T23:08:08.062061" elapsed="0.176498"/>
+</kw>
+<doc>Esta palavra-chave direciona para a página de politica de privacidade</doc>
+<status status="PASS" start="2024-10-05T23:08:08.062061" elapsed="0.176498"/>
+</kw>
+<kw name="Então valido que sou redirecionado para a página da politica de privacidade" owner="home_steps">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${privacy.tit_privacidade}</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-05T23:08:08.238559" elapsed="0.055321"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:08:08.238559" elapsed="0.055321"/>
+</kw>
+<kw name="Fechar navegador" owner="home_steps" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-05T23:08:08.293880" elapsed="2.229005"/>
+</kw>
+<status status="PASS" start="2024-10-05T23:08:08.293880" elapsed="2.229005"/>
+</kw>
+<doc>Este cenário verifica se ao clicar no link Politica de privacidade, ele direciona para outra página</doc>
+<tag>regressivo</tag>
+<status status="PASS" start="2024-10-05T23:08:05.596130" elapsed="4.926755"/>
+</test>
+<status status="PASS" start="2024-10-05T23:07:16.625073" elapsed="53.897812"/>
+</suite>
+<statistics>
+<total>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">obrigatorios</stat>
+<stat pass="9" fail="0" skip="0">regressivo</stat>
+<stat pass="2" fail="0" skip="0">telefone</stat>
+</tag>
+<suite>
+<stat pass="9" fail="0" skip="0" id="s1" name="Formulario">Formulario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
