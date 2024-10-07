@@ -1,73 +1,109 @@
 ## Projeto
-Desafio técnico Monuv
+**Desafio técnico Monuv**
 
-Esse projeto foi elaborado para realizar a automação de testes do formulário CAC. Disponivel no link: https://cac-tat.s3.eu-central-1.amazonaws.com/index.html.
-Com os testes é possível analisar cenários e validar funções para aprimorar sua funcionalidade.
+Esse projeto foi elaborado para realizar a automação de testes do formulário CAC.  
+Disponível no link: [https://cac-tat.s3.eu-central-1.amazonaws.com/index.html](https://cac-tat.s3.eu-central-1.amazonaws.com/index.html).  
+Com os testes, é possível analisar cenários e validar funções para aprimorar sua funcionalidade.
 
 ## Instalação
-Para executar o teste é necessário:
-1) Instalar o Python:
- 1.1) Acesse o site oficial do Python (python.org) e baixe a versão mais recente do Python.
- 1.2) Durante a instalação, marque a opção "Add Python to PATH".
- 1.3) Verifique se o Python foi instalado através da execução do comando no cmd que retorna a versão instalada: pip --version
+Para executar o teste, é necessário:
 
-2) Instalar o Robot Framework:
- 2.1) Para instalar o Robot, pode ser executado o comando no cmd: pip install robotframework 
+1. **Instalar o Python**:
+   - Acesse o site oficial do Python [python.org](https://www.python.org) e baixe a versão mais recente.
+   - Durante a instalação, marque a opção **"Add Python to PATH"**.
+   - Verifique se o Python foi instalado corretamente, executando o seguinte comando no terminal:
+     ```bash
+     pip --version
+     ```
 
-3) Instalar bibliotecas
- 3.1) Para instalar a biblioteca selenium, pode ser executado o comando: pip install robotframework-seleniumlibrary
- 3.2) Para instalar a biblioteca faker, pode ser executado o comando: pip install faker
+2. **Instalar o Robot Framework**:
+   - Para instalar o Robot Framework, execute o seguinte comando no terminal:
+     ```bash
+     pip install robotframework
+     ```
 
- 4) Instalar o chrome driver
-  4.1) Verificar a versão do browser que será usado para teste. Essa informação é exibida em:
-      4.1.1) Abrir o Chrome
-      4.1.2) No canto superior direito, procurar a opção Mais
-      4.1.3) Clicar em Ajuda
-      4.1.4) Sobre o Chrome 
-  4.2) Baixar a versão do chrome driver do mesmo navegador que será testado no link https://developer.chrome.com/docs/chromedriver/downloads?hl=pt-br
-  4.3) Localizar a pasta de scripts
-       4.3.1) Buscar as variavéis de ambiente no painel de controle
-       4.3.2) Clicar em variaveis de ambiente
-       4.3.3) Encontrar a pasta de armezenamento de scripts do Python (...\Python\Python312\Scripts\)
-       4.3.4) Abrir a pasta do python
-       4.3.5) Copiar o chromedriver.exe baixado e colar na pasta de scripts do Python
+3. **Instalar as bibliotecas necessárias**:
+   - Para instalar a biblioteca Selenium, execute:
+     ```bash
+     pip install robotframework-seleniumlibrary
+     ```
+   - Para instalar a biblioteca Faker, execute:
+     ```bash
+     pip install faker
+     ```
 
- ## Uso
- 5) Para executar o teste com todos os cases, pode ser usado o sequinte comando para: 
- robot -d results tests/cac/formulario.robot
-  5.1) usando -d results, vai ser criado uma pasta results, que armazenará os resultados
-  5.2) para executar somente os casos de teste regressivo, poder ser usado o comando: 
-  robot -d results --i regressivo tests/cac/formulario.robot
-  5.3) para executar somente os casos de teste que validam campos obrigatórios, poder ser executado o comando:
-  robot -d results --i obrigatorios tests/cac/formulario.robot
-  5.4) para executar somente os casos de teste que validam campo telefone, poder ser executado o comando:
-  robot -d results --i telefone tests/cac/formulario.robot
+4. **Instalar o ChromeDriver**:
+   - Verifique a versão do navegador Chrome que será usada nos testes:
+     1. Abra o Chrome.
+     2. No canto superior direito, clique em **Mais** (três pontos).
+     3. Vá em **Ajuda > Sobre o Google Chrome**.
+   - Baixe a versão correspondente do ChromeDriver em: [ChromeDriver Downloads](https://developer.chrome.com/docs/chromedriver/downloads?hl=pt-br).
+   - Localize a pasta de scripts do Python:
+     1. Abra o **Painel de Controle** e busque por **Variáveis de Ambiente**.
+     2. Clique em **Variáveis de Ambiente**.
+     3. Encontre a pasta de scripts do Python (ex: `...\Python\Python312\Scripts\`).
+     4. Copie o arquivo `chromedriver.exe` baixado e cole na pasta de scripts do Python.
 
- ## Estrutura do projeto
-6) A estrutura do projeto segue o padrão Page Object Model (POM) que ajuda a organizar os testes de forma mais eficiente e de maior clareza. 
+## Uso
+  5. **Executando os testes**:
+   - Para executar o teste com todos os casos, pode ser usado o seguinte comando:
+   ```bash
+   robot -d results tests/cac/formulario.robot
+   ```
+   - Utilizando -d results será criado a pasta results, que armazenará os resultados
+   - Para executar somente os casos de teste regressivo, poder ser usado o comando:
+   ```bash
+   robot -d results --i regressivo tests/cac/formulario.robot
+   ```
+   - Para executar somente os casos de teste que validam campos obrigatórios, poder ser executado o comando:
+   ```bash
+   robot -d results --i obrigatorios tests/cac/formulario.robot
+   ```
+   - Para executar somente os casos de teste que validam campo telefone, poder ser executado o comando:
+   ```bash
+   robot -d results --i telefone tests/cac/formulario.robot
+   ```
+  
 
- 6.1) elements: Contem xpaths e outros locators como (botão, texto, link) que identificam elementos da interface com o usuário
-  6.1.1) home: Contem todos os elementos que são encontrados na página home
-   6.1.1.1) arquivos: Contem arquivo 01_print_site.png usado para testar o upload de arquivo na página home
-   6.1.1.2) home_elements.resource: Dicionário de dados com os elementos da página home
-  6.1.2) privacy: Contem todos os elementos que são encontrados na página privacy 
-   6.1.2.1) privacy_elements.resource: Dicionário de dados com os elementos da página privacy
- 6.1.2) main_elements.resource: usado para importar o elements das páginas. Facilita para quando tiver muitas páginas.
+## Estrutura do projeto
 
- 6.2) libs: Contem as bibliotecas 
-  6.2.1) FakerLibrary: Contém uma biblioteca customizada em Python, pora poder usar a biblioteca Faker (não nativa do Robot) e gerar dados randômicos no teste como por exemplo nome, telefone e email.
+A estrutura do projeto segue o padrão **Page Object Model (POM)**, que ajuda a organizar os testes de forma mais eficiente e clara.
 
-6.3) resource: Contem recursos usados na automação como por exemplo palavras chaves, variáveis e biblioteca
- 6.3.1) settings.resource: Contém bibliotecas e variáveis de configuração usadas no projeto
+### 6.1. elements
+Contém xpaths e outros localizadores (botão, texto, link) que identificam elementos da interface com o usuário.
 
-6.4) results: Pasta criada para armazenar os resultados do teste como prints, logs e relatórios
+- **home**: Contém todos os elementos da página inicial.
+  - `01_print_site.png`: Arquivo usado para testar o upload de arquivo na página inicial.
+  - `home_elements.resource`: Dicionário de dados com os elementos da página inicial.
 
-6.5) steps: Contém as palavras chaves usadas no teste, que indicam o que fazer em cada etapa do teste
- 6.5.1) home: todos os steps da página home
- 6.5.1.1) home_steps.robot: contém as palavras chaves que são usada na página home
- 6.5.2) main_steps.robot: usado para importar os steps da pagina home
+- **privacy**: Contém todos os elementos da página de privacidade.
+  - `privacy_elements.resource`: Dicionário de dados com os elementos da página de privacidade.
 
-6.6) tests: Contém os casos de teste que serão usados no projeto
- 6.6.1) cac: Contém todos os testes relacionados ao site cac
- 6.6.1.2) formulario.robot: Contém os BDDs com os cenários aplicados para esse projeto
- 
+- **main_elements.resource**: Usado para importar elementos de várias páginas, facilitando a manutenção quando há muitas páginas.
+
+### 6.2. libs
+Contém bibliotecas personalizadas.
+
+- **FakerLibrary**: Contém uma biblioteca customizada em Python, permitindo o uso da biblioteca Faker (não nativa do Robot) para gerar dados randômicos, como nome, telefone e e-mail.
+
+### 6.3. resource
+Contém recursos usados na automação, como palavras-chave, variáveis e bibliotecas.
+
+- `settings.resource`: Contém bibliotecas e variáveis de configuração usadas no projeto.
+
+### 6.4. results
+Pasta criada para armazenar os resultados do teste, como capturas de tela, logs e relatórios.
+
+### 6.5. steps
+Contém as palavras-chave usadas no teste, que indicam o que fazer em cada etapa do teste.
+
+- **home**: Contém os steps da página inicial.
+  - `home_steps.robot`: Contém as palavras-chave usadas na página inicial.
+  
+- `main_steps.robot`: Usado para importar os steps da página inicial.
+
+### 6.6. tests
+Contém os casos de teste usados no projeto.
+
+- **cac**: Contém todos os testes relacionados ao site CAC.
+  - `formulario.robot`: Contém os BDDs com os cenários aplicados para este projeto.
